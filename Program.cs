@@ -24,7 +24,7 @@ namespace AdvAddressBookDB
             addressBookRepo.addNewContactToDataBase(addressBookModel);
             addressBookRepo.EditExitContactToDataBase(addressBookModel, "Dhoni");
             addressBookRepo.deleteExitContactInDataBase("Donald");
-            //addressBookRepo.personBelongingCityOrState();
+            addressBookRepo.personBelongingCityOrState();
         }
     }
 }
