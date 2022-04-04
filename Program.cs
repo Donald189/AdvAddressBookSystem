@@ -26,6 +26,7 @@ namespace AdvAddressBookDB
             addressBookRepo.deleteExitContactInDataBase("Donald");
             addressBookRepo.personBelongingCityOrState();
             addressBookRepo.CountByCityAndState();
+            addressBookRepo.sortedAlphabeticallyByFirstName();
         }
     }
 }
