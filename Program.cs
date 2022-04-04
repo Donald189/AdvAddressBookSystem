@@ -22,7 +22,7 @@ namespace AdvAddressBookDB
             addressBookModel.AddressBookType = "Self";
             addressBookRepo.DataBaseConnection();
             addressBookRepo.addNewContactToDataBase(addressBookModel);
-            //addressBookRepo.EditExiContactToDataBase(addressBookModel, "Dhoni");
+            addressBookRepo.EditExitContactToDataBase(addressBookModel, "Dhoni");
             //addressBookRepo.deleteExiContactInDataBase("Donald");
             //addressBookRepo.personBelongingCityOrState();
         }
