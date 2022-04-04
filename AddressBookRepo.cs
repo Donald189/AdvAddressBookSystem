@@ -300,5 +300,47 @@ namespace AdvAddressBookDB
                 this.connection.Close();
             }
         }
+        public void getNumberOfPersonCountByType()
+        {
+            try
+            {
+                AddressBookModel addressBookModel = new AddressBookModel();
+                using (this.connection)
+                {
+                    using (SqlCommand command = new SqlCommand(
+                        @"select count(AddressBookType) as 'NumberOfContacts' from AddressBook_Table where AddressBookType='Friends';
+                        select count(AddressBookType) as 'NumberOfContacts' from AddressBook_Table where AddressBookType='Family';", connection))
+                    {
+                        this.connection.Open();
+                        using (SqlDataReader sqlDataReader = command.ExecuteReader())
+                        {
+                            while (sqlDataReader.Read())
+                            {
+                                var count = sqlDataReader.GetInt32(0);
+                                Console.WriteLine("Number of person belonging to adress book type friend = {0}", count);
+                                Console.WriteLine("\n");
+                            }
+                            if (sqlDataReader.NextResult())
+                            {
+                                while (sqlDataReader.Read())
+                                {
+                                    var count = sqlDataReader.GetInt32(0);
+                                    Console.WriteLine("Number of person belonging to adress book type family= {0}", count);
+                                    Console.WriteLine("\n");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                this.connection.Close();
+            }
+        }
     }
 }
