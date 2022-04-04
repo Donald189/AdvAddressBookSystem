@@ -20,8 +20,8 @@ namespace AdvAddressBookDB
             addressBookModel.Email = "donaldkarey@gmail.com";
             addressBookModel.AddressBookName = "Self address book";
             addressBookModel.AddressBookType = "Self";
-            //addressBookRepo.DataBaseConnection();
-            //addressBookRepo.addNewContactToDataBase(addressBookModel);
+            addressBookRepo.DataBaseConnection();
+            addressBookRepo.addNewContactToDataBase(addressBookModel);
             //addressBookRepo.EditExiContactToDataBase(addressBookModel, "Dhoni");
             //addressBookRepo.deleteExiContactInDataBase("Donald");
             //addressBookRepo.personBelongingCityOrState();
