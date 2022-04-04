@@ -29,6 +29,7 @@ namespace AdvAddressBookDB
             addressBookRepo.sortedAlphabeticallyByFirstName();
             addressBookRepo.identifyAddressBookWithNameAndType("Donald","Self","Self addressbook");
             addressBookRepo.getNumberOfPersonCountByType();
+            addressBookRepo.addPersonToBothFriendAndFamily(addressBookModel);
         }
     }
 }
