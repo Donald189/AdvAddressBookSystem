@@ -270,5 +270,35 @@ namespace AdvAddressBookDB
                 this.connection.Close();
             }
         }
+        public bool identifyAddressBookWithNameAndType(string firstName, string addressType, string adressName)
+        {
+            try
+            {
+                using (this.connection)
+                {
+                    string query = @"update AddressBook_Table set AddressBookName=@AddressBookName , AddressBookType=@AddressBookType where FirstName=@FirstName;";
+                    SqlCommand cmd = new SqlCommand(query, this.connection);
+                    cmd.Parameters.AddWithValue("@FirstName", firstName);
+                    cmd.Parameters.AddWithValue("@AddressBookType", addressType);
+                    cmd.Parameters.AddWithValue("@AddressBookName", adressName);
+                    this.connection.Open();
+                    var result = cmd.ExecuteNonQuery();
+                    this.connection.Close();
+                    if (result != 0)
+                    {
+                        return true;
+                    }
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                this.connection.Close();
+            }
+        }
     }
 }

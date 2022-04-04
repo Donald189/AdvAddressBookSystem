@@ -27,6 +27,7 @@ namespace AdvAddressBookDB
             addressBookRepo.personBelongingCityOrState();
             addressBookRepo.CountByCityAndState();
             addressBookRepo.sortedAlphabeticallyByFirstName();
+            addressBookRepo.identifyAddressBookWithNameAndType("Donald","Self","Self addressbook");
         }
     }
 }
